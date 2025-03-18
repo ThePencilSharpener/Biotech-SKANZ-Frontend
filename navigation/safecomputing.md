@@ -11,32 +11,31 @@ Safe computing is essential to protect personal information, maintain system int
 ---
 
 ## Key Principles
-
-### 1. **Protect Personal Information (College Board Big Idea: Data)**
+### 1. **Protect Personal Information (IOC Requirement: Data Protection)**
 Protecting your personal information is the first step toward safe computing. Cybercriminals often exploit weak security practices to gain unauthorized access to sensitive data. To mitigate these risks:
 - Use strong, unique passwords for each account. A strong password typically includes a mix of uppercase and lowercase letters, numbers, and special characters.
 - Enable two-factor authentication (2FA) where possible. This adds an extra layer of security by requiring a second form of verification, such as a code sent to your phone.
 - Avoid sharing sensitive information online, especially on public platforms or unsecured websites. Be cautious about what you post on social media, as it can be used to guess security questions or passwords.
 
-### 2. **Secure Your Devices (College Board Big Idea: Security)**
+### 2. **Secure Your Devices (IOC Requirement: Device Security)**
 Your devices are gateways to your personal and professional life. Keeping them secure is critical:
 - Keep your operating system and software up to date. Regular updates often include patches for security vulnerabilities.
 - Install and maintain antivirus software to detect and remove malicious programs.
 - Use a firewall to block unauthorized access to your network and devices. This acts as a barrier between your device and potential threats.
 
-### 3. **Practice Safe Browsing (College Board Big Idea: Security)**
+### 3. **Practice Safe Browsing (IOC Requirement: Internet Safety)**
 The internet is a vast resource, but it also harbors risks. To browse safely:
 - Avoid clicking on suspicious links or downloading unknown files, as they may contain malware or lead to phishing sites.
 - Verify website URLs before entering sensitive information. Look for typos or slight variations in domain names that could indicate a fake site.
 - Use secure (HTTPS) websites for online transactions. The "S" in HTTPS stands for "secure," indicating that the connection is encrypted.
 
-### 4. **Be Aware of Social Engineering (College Board Big Idea: Security)**
+### 4. **Be Aware of Social Engineering (IOC Requirement: Threat Awareness)**
 Social engineering attacks exploit human psychology to gain access to sensitive information. To protect yourself:
 - Recognize phishing attempts in emails or messages. Look for red flags such as urgent language, unexpected attachments, or requests for personal information.
 - Avoid sharing personal information with unverified sources. Always confirm the identity of the requester before providing sensitive data.
 - Be cautious of unsolicited requests for sensitive data, even if they appear to come from trusted sources.
 
-### 5. **Backup Data Regularly (College Board Big Idea: Data)**
+### 5. **Backup Data Regularly (IOC Requirement: Data Recovery)**
 Data loss can occur due to hardware failure, cyberattacks, or accidental deletion. To ensure your data is safe:
 - Use cloud storage or external drives to back up important files. This provides a secure copy of your data in case of an emergency.
 - Schedule automatic backups to ensure data safety without relying on manual intervention. Regular backups minimize the risk of losing critical information.
