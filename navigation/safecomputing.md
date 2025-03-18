@@ -8,7 +8,6 @@ permalink: /safecomputing/
 ## Introduction
 Safe computing is essential to protect personal information, maintain system integrity, and ensure ethical use of technology. In today's interconnected world, understanding and implementing safe computing practices is crucial to safeguard against cyber threats, data breaches, and unethical behavior. This lesson aligns with the College Board's principles of safe computing, empowering you to navigate the digital landscape responsibly and securely.
 
----
 
 ## Key Principles
 ### 1. **Protect Personal Information (IOC Objective: Data Protection)**
@@ -40,15 +39,12 @@ Data loss can occur due to hardware failure, cyberattacks, or accidental deletio
 - Use cloud storage or external drives to back up important files. This provides a secure copy of your data in case of an emergency.
 - Schedule automatic backups to ensure data safety without relying on manual intervention. Regular backups minimize the risk of losing critical information.
 
----
-
 ## Ethical Computing (College Board Big Idea: Impact of Computing)
 Ethical computing involves using technology responsibly and respecting the rights of others. To practice ethical computing:
 - Respect intellectual property and copyright laws. Always give credit to original creators and avoid using unauthorized copies of software or media.
 - Avoid using pirated software or media, as it not only violates copyright laws but also poses security risks.
 - Be mindful of your digital footprint and online behavior. Remember that your actions online can have real-world consequences, both for yourself and others.
 
----
 
 ## Popcorn Hack: Password Strength Checker
 Test your understanding of safe computing by creating a simple program to check the strength of a password. Use the following criteria:
@@ -78,8 +74,6 @@ password = input("Enter a password to test: ")
 print(check_password_strength(password))
 ```
 
----
-
 
 ## Homework
 
@@ -100,8 +94,115 @@ Create a backup strategy for a hypothetical small business. Your plan should inc
 - **Backup frequency.**
 - **Tools or services to use.**
 
----
 
 ## Conclusion
 By following these safe computing practices, which align with the College Board's principles, you can protect yourself and others from potential risks while fostering a secure and ethical digital environment. Safe computing is not just about protecting your own data; it is also about contributing to a safer and more trustworthy digital community. Stay informed, stay vigilant, and always prioritize security and ethics in your digital interactions.
 
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 3px solid #0056b3;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #004494;
+    margin-top: 15px;
+}
+
+/* Section Containers */
+.section {
+    background: #eef5ff;
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 5px solid #0056b3;
+    border-radius: 5px;
+}
+
+/* Code Blocks */
+pre {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+/* List Styles */
+ul {
+    margin-left: 20px;
+    list-style: square;
+}
+
+/* Callout Boxes */
+.note {
+    background: #e7f3fe;
+    padding: 10px;
+    border-left: 5px solid #2196F3;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.warning {
+    background: #ffebee;
+    padding: 10px;
+    border-left: 5px solid #d32f2f;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    background: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: #004494;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+</style>
