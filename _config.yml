@@ -3,7 +3,7 @@ description: "Pilot City Game"
 owner_name: Kush Kharia
 github_username: ThePencilSharpener
 github_repo: "Biotech-Engagement-Game-Frontend" 
-baseurl: "/biotech-game"
+baseurl: "/Biotech-Engagement-Game-Frontend"
 future: true
 remote_theme: jekyll/minima
 minima:
