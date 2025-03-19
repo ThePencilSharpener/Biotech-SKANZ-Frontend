@@ -1,8 +1,8 @@
-title: DNHS Flocker
-description: "Social Media for Del Norte High School"
-owner_name: John Mortensen
-github_username: nighthawkcoders
-github_repo: "flocker_frontend" 
+title: Biotech Game
+description: "Pilot City Game"
+owner_name: Kush Kharia
+github_username: ThePencilSharpener
+github_repo: "Biotech-Engagement-Game-Frontend"" 
 baseurl: "/biotech-game"
 future: true
 remote_theme: jekyll/minima
