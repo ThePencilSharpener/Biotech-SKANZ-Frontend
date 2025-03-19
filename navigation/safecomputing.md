@@ -35,8 +35,8 @@ Social engineering attacks exploit human psychology to gain access to sensitive 
 - Be cautious of unsolicited requests for sensitive data, even if they appear to come from trusted sources.
 
 ### 5. **Backup Data Regularly (IOC Objective: Data Recovery)**
-Data loss can occur due to hardware failure, cyberattacks, or accidental deletion. To ensure your data is safe:
-- Use cloud storage or external drives to back up important files. This provides a secure copy of your data in case of an emergency.
+Data loss can occur due to hardware failure, cyberattacks, or accidental deletion. To ensure your data is safe: 
+- Use cloud storage or external drives to back up important files. This provides a secure copy of your data in case of an emergency. 
 - Schedule automatic backups to ensure data safety without relying on manual intervention. Regular backups minimize the risk of losing critical information.
 
 ## Ethical Computing (College Board Big Idea: Impact of Computing)
@@ -44,6 +44,12 @@ Ethical computing involves using technology responsibly and respecting the right
 - Respect intellectual property and copyright laws. Always give credit to original creators and avoid using unauthorized copies of software or media.
 - Avoid using pirated software or media, as it not only violates copyright laws but also poses security risks.
 - Be mindful of your digital footprint and online behavior. Remember that your actions online can have real-world consequences, both for yourself and others.
+
+## NCIS Hacking Scene
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/msX4oAXpvUE" title="NCIS hacking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+
+### [Hot spot dangers: That Internet cafe could cost you way more than a cup of coffee](https://www.computerworld.com/article/1548011/hot-spot-dangers-that-internet-cafe-could-cost-you-way-more-than-a-cup-of-coffee.html)
 
 
 ## Popcorn Hack: Password Strength Checker
