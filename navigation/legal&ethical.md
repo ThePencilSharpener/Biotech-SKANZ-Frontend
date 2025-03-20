@@ -77,6 +77,25 @@ BSD Licenses – Less restrictive, but still requires attribution.
 <br>
 Creative Commons (CC) – Typically used for non-software content.
 
+
+This is how you would add a license to your repository. This is so that when you want to allow other's to use your code they will have restrictions.
+
+## 2. Add a License to Your Repository
+
+### Option 1: Adding a License via GitHub
+
+1. Open your repository on GitHub.
+2. Click the **Add file** button → **Create new file**.
+3. Name the file `LICENSE` (GitHub will suggest templates).
+4. Select a license from GitHub’s template suggestions.
+5. Click **Commit new file**.
+
+
+
+
+
+
+
 ## Ethical Concerns Topics:
 - Digital Divide
 - Reasons for the Divide
