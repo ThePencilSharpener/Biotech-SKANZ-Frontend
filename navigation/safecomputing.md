@@ -1,5 +1,5 @@
 ---
-layout: base 
+layout: page
 title: Safe Computing 
 search_exclude: true
 permalink: /safecomputing/

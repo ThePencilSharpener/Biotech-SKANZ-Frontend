@@ -1,26 +1,17 @@
 ---
-layout: base 
-title: Legal and Ethical  
+layout: page
+title: 5.5 Legal and Ethical Concerns  
 search_exclude: true
 permalink: /legalandethical/
 ---
-
-# **5.5 Legal and Ethical Concerns**
-
-Panera visit
-![Image](https://github.com/user-attachments/assets/92b414a6-6355-4091-a565-a7395cf34430)
-
-
 
 #### Main Question: *How can the use of computing raise legal and ethical concerns?*
 
 
 ## Introduction:
-As intellectual property and technology evolve, understanding digital licensing, fair use, and access is crucial for legal and ethical reasons.
 
-In this Team Teach, we'll explore these principles and their role in innovation and creativity.
-
-
+- As intellectual property and technology evolve, understanding digital licensing, fair use, and access is crucial for legal and ethical reasons.
+- In this Team Teach, we'll explore these principles and their role in innovation and creativity.
 
 ## Legal Concerns Topics:
 - Intellectual Property(IP)
@@ -28,17 +19,26 @@ In this Team Teach, we'll explore these principles and their role in innovation 
 - Open Source/Access
 
 
-### Intellectual Property()
+### Intellectual Property (IP):
 
-* Intellectual property refers to original works or creations born from creativity, for which the creator holds legal rights.
+- Intellectual property refers to original works or creations born from creativity, for which the creator holds legal rights.
 
-Examples of this are names, symbols, images, drawings, code(if not open-sourced), designs, etc.
+- Examples of this are names, symbols, images, drawings, code(if not open-sourced), designs, etc.
 
-The person who thought of this and made it, own it
+- The person who thought of something and made it, owns it
 
-Ever since things have been digitized, digital information (everything online) can be easily distributed and saved on computers, and our IP can be accessed quicker and easier, raising concerns about whether someone is allowed to use someone else creation
+- Ever since things have been digitized, digital information (everything online) can be easily distributed and saved on computers, and our IP can be accessed quicker and easier, raising concerns about whether someone is allowed to use someone else's creation without their direct consent
+`
+- There are legal ways to use materials created by someone else, which include Creative Commons, Open Source, and Open Access
 
-There are legal ways to use materials created by someone else, which include Creative Commons, Open Source, and Open Access
+# Popcorn Hack #1 (No Discussing!):
+#### Do you think that IP is similar to an IP address? Does IP address stand for Intellectual Property address?
+
+## Answer:
+
+- This IP does NOT have anything to do with an IP address... an IP address (or Internet Protocol address) is a numerical label assigned to a device that:
+    - Is connected to a computer network
+    - Uses the Internet Protocol for communication (do not abbreviate Internet Protocol to IP, or there will be confusion!)
 
 ### Creative Commons License (Fair, Use, Copyright)
 
