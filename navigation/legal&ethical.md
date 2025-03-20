@@ -42,8 +42,40 @@ permalink: /legalandethical/
 
 ### Creative Commons License (Fair, Use, Copyright)
 
-Creative commons provides free 
+Creative commons provides free licenses that can be used to tell people how to use the creation.
+* It tells them what can or cannot be done with there IP
+* It makes it easier for creators because instead of everyone requesting the creator for permission to use it, CC grants specific permissions for other's to use their work
+    * For instance, if you make a drawing and want lots of people on the internet to access it without each of them individually having to ask you to use your drawing
+    * Another example of Creative Commons License is when someone has a drawing online and wants users to use it, but does not want it to be used in any advertisements. 
 
+### Open Source/Access
+
+Open source are programs that are made freely available for anyone to use and make modifications to (through their own version of the content)
+* Encourages people to collaborate and contribute to your creation
+* Open access is online research free of any and all restrictions on access and free of several restrictions on use, such as copyright and license restrictions
+* Regardless of how we legally use someone else’s creations, we should always give credit to them as they are the original author
+
+* While open source content is usually used with good intention, the fact that it is free and anyone can make changes to it allows people to use it to harm other individuals or groups
+
+
+## **Popcorn Hacks(Discussion)**
+*What are some of the licenses you know?*
+<br>
+What do they mean and what do they do?
+<br>
+<br>
+Hear are some examples of Licenses
+<br>
+<br>
+MIT License – Allows anyone to use, modify, and distribute your code with attribution.
+<br>
+Apache 2.0 – Similar to MIT but also provides an explicit grant of patent rights.
+<br>
+GPL (General Public License) – Requires anyone who modifies and distributes your code to open-source their modifications.
+<br>
+BSD Licenses – Less restrictive, but still requires attribution.
+<br>
+Creative Commons (CC) – Typically used for non-software content.
 
 ## Ethical Concerns Topics:
 - Digital Divide
