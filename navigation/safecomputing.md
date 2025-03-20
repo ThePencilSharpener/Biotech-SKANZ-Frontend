@@ -101,6 +101,8 @@ Create a backup strategy for a hypothetical small business. Your plan should inc
 - **Backup frequency.**
 - **Tools or services to use.**
 
+### [Homework Submission Form](https://forms.gle/VfRUDSamtbDnzDjPA)
+
 
 ## Conclusion
 By following these safe computing practices, which align with the College Board's principles, you can protect yourself and others from potential risks while fostering a secure and ethical digital environment. Safe computing is not just about protecting your own data; it is also about contributing to a safer and more trustworthy digital community. Stay informed, stay vigilant, and always prioritize security and ethics in your digital interactions.
