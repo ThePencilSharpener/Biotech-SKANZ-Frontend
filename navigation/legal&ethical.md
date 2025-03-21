@@ -123,6 +123,51 @@ Impact on Small Businesses & Competition
 - Smaller businesses that can’t afford to outbid large corporations for advertising space struggle to gain visibility. This demonstrates Google’s monopoly, as businesses become dependent on Google Ads to compete.
 - Example: A local coffee shop trying to compete with Starbucks may have trouble appearing in search results because Starbucks can pay for priority placement.
 
+## Sample MCQ Questions:
+
+#### 2018 MCQ (Beginning of Tri 2):
+- A user reads reviews of a popular artist’s new album and then downloads the album from the Web site of a licensed online music seller. Which of the following is LEAST likely to be a consequence of this action?
+    - A: Advertisements for the artist’s other albums will be displayed when the user visits a different Web site.
+    - B: Album reviews from other people who live nearby will be displayed to the user.
+    - C: Similar artists will be recommended to the user based on the user’s download selection.
+    - D: The user will be in violation of the Digital Millennium Copyright Act (DMCA).
+
+- The answer is D; because the album was purchased and downloaded through a licensed music store, the user will not be in violation of the DMCA.
+
+- A musician is creating a song using audio samples. Which of the following actions will minimize the risk of a copyright violation when creating sample-based music?
+    - A: Using samples found on popular music-streaming sites
+    - B: Using samples found on peer-to-peer networks
+    - C: Using samples from nondigital sound sources (vinyl records, tapes, etc.)
+    - D: Using samples published with a no-rights-reserved Creative Commons license
+
+- The answer is D because Creative Commons licenses can be used by creators of digital music to specify how the samples can be used by others. A no-rights-reserved license allows others to freely make use of the samples.
+
+#### 2020 MCQ (End of Tri 2):
+
+- A student purchases a single-user license of a copyrighted application and wants other students to be able to use it at the same time. Under which of the following conditions is it considered acceptable for the student to share the application?
+    - A: When the application is shared only with students at the same school
+    - B: When the application is shared on a peer-to-peer network
+    - C: When the student gets permission from the copyright owner of the application
+    - D: When the student makes a copy of the application for another student to use only once
+
+The answer is C because in order to share the application without violating copyright, the student should receive permission from the copyright owner.
+
+- Which of the following best describes the impact of Creative Commons?
+    - A: Creative Commons gives creators of digital content the ability to indicate how their works can be legally used and distributed, enabling broad access to digital information.
+    - B: Creative Commons gives Internet users the right to legally use and distribute any previously copyrighted work, enabling broad access to digital information.
+    - C: Create Commons provides lossless transmission of messages, enabling reliable distribution of digital information.
+    - D: Creative Commons provides private transmission of messages, enabling secure distribution of digital information.
+
+The answer is A; Creative Commons licensing allows copyright owners to specify the ways in which their works can be used or distributed. This allows individuals to access or modify these works without the risk of violating copyright laws.
+
+-  Which of the following is NOT an advantage of using open-source software?
+    - A: Open-source software is generally free or lower in cost than commercially available software.
+    - B: The availability of source code makes it possible to customize open-source software to a user’s individual needs.
+    - C: The original developer of open-source software provides free or low-cost support for users installing and running the software.
+    - D: Unlike commercial software, which can become obsolete when the company that created it goes out of business, open-source software can be updated without the involvement of the original programmers.
+
+The answer is C; Open-source software has source code that is released under a license that allows users the rights to use and distribute it. However, there is no guarantee that the original developer of open-source software will provide support for its users.
+
 ### HOMEWORK:
 
 - Complete the quiz; once finished, 
