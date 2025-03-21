@@ -7,34 +7,29 @@ permalink: /legalandethical/
 
 #### Main Question: *How can the use of computing raise legal and ethical concerns?*
 
+<br>
+By the end of the lesson, students will learn:
+- The difference between Intellectual Property (IP) and an IP Address.
+- How Creative Commons, Open Source, and Open Access affect digital content use.
+- The purpose of software licenses (e.g., MIT, Apache, GPL) and their restrictions.
+- The ethical vs. legal concerns of using others' work in coding and technology.
+- The Google v. U.S. DOJ case and its implications for competition and consumer trust.
 
-## Introduction:
-
+### Introduction:
 - As intellectual property and technology evolve, understanding digital licensing, fair use, and access is crucial for legal and ethical reasons.
 - In this Team Teach, we'll explore these principles and their role in innovation and creativity.
 
-## Legal Concerns Topics:
-- Intellectual Property(IP)
-- Creative Commons License (Fair Use, Copyright)
-- Open Source/Access
-
-
 ### Intellectual Property (IP):
-
-- Intellectual property refers to original works or creations born from creativity, for which the creator holds legal rights.
-
-- Examples of this are names, symbols, images, drawings, code(if not open-sourced), designs, etc.
-
+- Intellectual property refers to original works or creations born from the creativity, for which the creator holds legal rights.
+- Examples of this are names, symbols, images, drawings, code (if not open-sourced), designs, etc.
 - The person who thought of something and made it, owns it
-
 - Ever since things have been digitized, digital information (everything online) can be easily distributed and saved on computers, and our IP can be accessed quicker and easier, raising concerns about whether someone is allowed to use someone else's creation without their direct consent
-`
 - There are legal ways to use materials created by someone else, which include Creative Commons, Open Source, and Open Access
 
-# Popcorn Hack #1 (No Discussing!):
-#### Do you think that IP is similar to an IP address? Does IP address stand for Intellectual Property address?
+### Popcorn Hack #1 (No Discussing!):
+#### Do you think that IP is similar to an IP address? Does IP address stand for Intellectual Property address? If yes, what is IP address used for? If not, what is the difference between IP and IP address?
 
-## Answer:
+### Answer:
 
 - This IP does NOT have anything to do with an IP address... an IP address (or Internet Protocol address) is a numerical label assigned to a device that:
     - Is connected to a computer network
@@ -43,12 +38,12 @@ permalink: /legalandethical/
 ### Creative Commons License (Fair, Use, Copyright)
 
 Creative commons provides free licenses that can be used to tell people how to use the creation.
-* It tells them what can or cannot be done with there IP
-* It makes it easier for creators because instead of everyone requesting the creator for permission to use it, CC grants specific permissions for other's to use their work
+* It tells them what can or cannot be done with their IP
+* It makes it easier for creators because, instead of everyone requesting the creator for permission to use it, CC grants specific permissions for other's to use their work
     * For instance, if you make a drawing and want lots of people on the internet to access it without each of them individually having to ask you to use your drawing
     * Another example of Creative Commons License is when someone has a drawing online and wants users to use it, but does not want it to be used in any advertisements. 
 
-### Open Source/Access
+### Open Source / Open Access
 
 Open source are programs that are made freely available for anyone to use and make modifications to (through their own version of the content)
 * Encourages people to collaborate and contribute to your creation
@@ -58,35 +53,92 @@ Open source are programs that are made freely available for anyone to use and ma
 * While open source content is usually used with good intention, the fact that it is free and anyone can make changes to it allows people to use it to harm other individuals or groups
 
 
-## **Popcorn Hacks(Discussion)**
+### **Popcorn Hacks (Discussion)**
 *What are some of the licenses you know?*
 <br>
 What do they mean and what do they do?
 <br>
 <br>
-Hear are some examples of Licenses
+Here are some examples of Licenses:
 <br>
 <br>
-MIT License – Allows anyone to use, modify, and distribute your code with attribution.
+MIT License – Allows anyone to use, modify, and distribute your code with attribution, but no liability or warranty with the license itself.
 <br>
-Apache 2.0 – Similar to MIT but also provides an explicit grant of patent rights.
+Apache 2.0 – Similar to MIT but also provides an explicit grant of patent rights, and you must include a license notice.
 <br>
-GPL (General Public License) – Requires anyone who modifies and distributes your code to open-source their modifications.
+GPL (General Public License) – Requires anyone who modifies and distributes your code to open-source their modifications (cannot make a privatized version).
 <br>
-BSD Licenses – Less restrictive, but still requires attribution.
+BSD Licenses – Less restrictive, but still requires attribution and there is no warranty.
 <br>
-Creative Commons (CC) – Typically used for non-software content.
+Creative Commons (CC) – Typically used for non-software content but is a public domain and attribution is required.
 
-## Ethical Concerns Topics:
-- Digital Divide
-- Reasons for the Divide
+### Legal But Not Ethical:
 
-### Digital Divide:
-- Unequal distribution of access to technology
-- eg. senior citizens, low income people, people in rural areas, and some races and ethnicities don't have equal access or understanding of content or resources
+While copying somoene else's code or other work may be legal in some cases (such as Open Source and Open Access), it is not ethical due to several reasons:
+- Using code without permission disrespects the creator’s effort 
+- Open-source relies on community trust; misuse undermines this system and breaks the overall trust in using the work.
+- Using unlicensed or improperly licensed code can give an unfair edge over others who pay for/correctly use lisences.
+- Profiting from someone’s work without respecting license terms is ethically wrong, even if technically allowed, as the person often puts in little to no work.
 
-#### Reasons for the Divide:
-- Because there is less internet infrastructure in rural areas, people that live there may have little to no access to the internet
-- Technology can be expensive, and families with little to no income or in areas where electronics are relatively expensive may not be able to buy devices to access the internet
-    - For instance, technology is the most expensive in Venezuela or Angola, but the countries themselves have a low average income and GDP per capita
+Do:
+- Keep the original author's credit when making a copy of a repository or forking a repository
+- Adding README file to give credit to the author
+- Follow open-source licenses for modifications
 
+Do NOT:
+- Remove the author's credit and claim the code as yours
+- Copy code from GitHub/Stack Overflow without giving due credit
+- Sell modified open-source code without permission from the author and/or giving a share of the profits to the author for their originality
+
+### Real-World Example: Google v. US Department of Justice
+
+Google has long dominated the global search engine market, controlling approximately 90% of internet searches. The U.S. Department of Justice (DOJ) filed a lawsuit alleging that Google's practices, such as paying billions to device manufacturers and browsers to set Google as the default search engine, stifled competition and harmed consumers.
+
+Legal Concerns:
+
+- Google's agreements with companies like Apple to be the default search engine on devices were deemed to suppress competition, violating antitrust laws designed to promote fair competition. 
+
+- The court found that Google's monopolistic practices limited consumer choices and innovation in the search engine market, raising concerns about a single company's control over information access.
+
+Ethical Concerns:
+
+- By making itself the default search engine, Google potentially limited users' exposure to alternative search options, affecting their autonomy in choosing information sources.
+
+- Google's dominance allowed extensive data collection, raising ethical questions about user consent and the potential misuse of personal information.
+
+Then google did the unthinkable... they started promoting their sponsors on their search engine...
+
+This was not legal in any way but it was ethically wrong in many aspects:
+
+Manipulated Information Access
+- When Google gives priority to paid advertisements and sponsored content, users most liekly see results from companies that pay Google the most, which may not always provide relevant and unbiased information.
+- Example: If a user searches for “best smartphones 2025,” the first few results will likely be paid promotions from brands that bid the highest on Google Ads rather than independent, unbiased reviews.
+
+Consumer Trust and Deceptive Practices
+- Many users assume that the top search results are the most relevant and credible, and Google’s algorithm does not prioritize accuracy or user benefit but rather revenue generation.
+- Example: If someone searches for “best healthcare provider near me,” they may be directed to a sponsored clinic that paid for a top spot rather than one with the highest patient ratings or best medical services.
+
+
+Impact on Small Businesses & Competition
+- Smaller businesses that can’t afford to outbid large corporations for advertising space struggle to gain visibility. This demonstrates Google’s monopoly, as businesses become dependent on Google Ads to compete.
+- Example: A local coffee shop trying to compete with Starbucks may have trouble appearing in search results because Starbucks can pay for priority placement.
+
+### HOMEWORK:
+
+- Complete the quiz; once finished, 
+
+- Add a license to your repository and explain why you chose that lisence (how it aligns with your goals / accomplishments in the repo).
+
+- Using GitHub Web Interface:
+    - Go to your repository on GitHub.
+    - Click “Add file” → “Create new file”.
+    - Name it LICENSE or LICENSE.txt.
+    - Click “Choose a license template” and select one.
+    - Commit the file to your repo.
+
+- On the google form, copy and paste the link to your repo and the name of your license file.
+
+- Go to the following Quizlet flashcards (the same one from the Quizlet Live) and click on the "Match" button
+    - Your goal is to get a under 20 seconds (should be easy), if you get under 10 seconds it is extra credit
+    - Take a screenshot of your time (MUST have your quizlet user or some proof it was you in the screenshot)
+    - Upload the image of your screenshot and submit the form
