@@ -91,33 +91,51 @@ permalink: /legalandethical/
 <span style="font-size: 1.2em;"><br></span>
 
 <span style="font-size: 1.2em;">MIT License – Allows users to do almost anything as long as they include the original license. However, there is no protection against patent claims and it doesn’t require derivative (copied) works to be open-source.</span>
-![MIT Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/License_icon-mit.svg/2048px-License_icon-mit.svg.png)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/License_icon-mit.svg/2048px-License_icon-mit.svg.png" alt="MIT Logo" width="200"/>
+
 <span style="font-size: 1.2em;"><br></span>
 
 <span style="font-size: 1.2em;">Apache 2.0 – Similar to MIT but includes an explicit patent grant, preventing lawsuits over patented technology. Also, it includes clear rules for modifications but has longer legal text.</span>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/ASF_Logo.svg/1200px-ASF_Logo.svg.png" alt="ASF Logo" width="200"/>
+
 <span style="font-size: 1.2em;"><br></span>
 
 <span style="font-size: 1.2em;">GNU General Public License (GPL) – Any project using GPL-licensed code must also be open-source and licensed under GPL.</span>
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibEY1Im3eym1AJvkuTb7xcOC_MRLkBUKWiS8SxaTWxNsa1KYcwb_wM13Xz0q-3ENXF_YLpi3eMt8U-SvoiM0LhmJVqKqHNfDfUQOkTlWOBpGqI5Thw8iMg1fthS3xPqhbK4HKk/s1600/GNU-General-Public-License.png" alt="GNU GPL Logo" width="200"/>
+
 <span style="font-size: 1.2em;"><br></span>
 
 <span style="font-size: 1.2em;">BSD License (Berkeley Software Distribution) – Similar to MIT but has two major versions:</span>
+<img src="https://www.controle.net/novo/assets/img/faq/faq-bsd-berkeley-software-distribution-unix-1470118209.jpg" alt="BSD Logo" width="200"/>
+
 
 <span style="font-size: 1.2em;">- 2-Clause BSD: Requires attribution (giving credit to original author) but allows modifications without restriction.</span>
+<img src="https://i0.wp.com/opensource.org/wp-content/uploads/2006/07/OSI_Approved_License.png?fit=873%2C1200&ssl=1" alt="OSI Approved License Logo" width="200"/>
+
 
 <span style="font-size: 1.2em;">- 3-Clause BSD: Includes a restriction that you cannot use the original author's names, trademarks, or project names to endorse or promote your own derivative version of the software without their permission.</span>
+<img src="https://fossa.com/blog/content/images/2021/03/BSD.png" alt="BSD Logo" width="200"/>
+
 <span style="font-size: 1.2em;"><br></span>
 
 <span style="font-size: 1.2em;">Creative Commons (CC) – Mostly used for creative works (not software) and offers different levels of restriction.</span>
+<img src="https://s3.amazonaws.com/libapps/accounts/86415/images/Creative_Commons_logo.gif" alt="Creative Commons Logo" width="200"/>
 
 <span style="font-size: 1.2em;">Common CC License Types:</span>
+<img src="https://img.oercommons.org/thecb-production/media/editor/1068/creative-commons-6_logos.png" width="500"/>
 
 <span style="font-size: 1.2em;">- CC BY: Allows modification and commercial use if credit is given.</span>
+<img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" width="500"/>
 
 <span style="font-size: 1.2em;">- CC BY-SA: Like GPL — derivative works must be under the same license.</span>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiHMSu9d_oakIdW_xYEoNhGhLZhAkLsAqYJw&s" width="500"/>
 
 <span style="font-size: 1.2em;">- CC BY-ND: No derivatives allowed at all.</span>
+<img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nd.png" width="500"/>
 
 <span style="font-size: 1.2em;">- CC BY-NC: Non-commercial use only (to be used for privatized works).</span>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Cc_by-nc_icon.svg/1200px-Cc_by-nc_icon.svg.png" width="500"/>
+
 <span style="font-size: 1.2em;"><br></span>
 
 ### Popcorn hack #2:
