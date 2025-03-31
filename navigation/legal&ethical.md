@@ -91,6 +91,7 @@ permalink: /legalandethical/
 <span style="font-size: 1.2em;"><br></span>
 
 <span style="font-size: 1.2em;">MIT License – Allows users to do almost anything as long as they include the original license. However, there is no protection against patent claims and it doesn’t require derivative (copied) works to be open-source.</span>
+![MIT Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/License_icon-mit.svg/2048px-License_icon-mit.svg.png)
 <span style="font-size: 1.2em;"><br></span>
 
 <span style="font-size: 1.2em;">Apache 2.0 – Similar to MIT but includes an explicit patent grant, preventing lawsuits over patented technology. Also, it includes clear rules for modifications but has longer legal text.</span>
