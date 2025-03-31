@@ -176,20 +176,23 @@ permalink: /legalandethical/
 
 ### Real-World Example: Google v. US Department of Justice
 
-<span style="font-size: 1.2em;">Google has long dominated the global search engine market, controlling approximately 90% of internet searches. The U.S. Department of Justice (DOJ) filed a lawsuit alleging that Google's practices, such as paying billions to device manufacturers and browsers to set Google as the default search engine, stifled competition and harmed consumers.</span>
+<br>
+<img src="{{ site.baseurl }}/images/googlevsdoj5.5.jpg" alt="Description" width="600">
+
+<span style="font-size: 1.2em;">Google controlled approximately 90% of internet searches, and the U.S. Department of Justice (DOJ) filed a lawsuit alleging that Google's practices, such as paying billions to device manufacturers and browsers to set Google as the default search engine, shut down competitors and harmed consumers.</span>
 
 <span style="font-size: 1.2em;"><br></span>
 <span style="font-size: 1.2em;">Legal Concerns:</span>
 
-<span style="font-size: 1.2em;">- Google's agreements with companies like Apple to be the default search engine on devices were deemed to suppress competition, violating antitrust laws designed to promote fair competition.</span>
+<span style="font-size: 1.2em;">- Google's agreements with companies like Apple to be the default search engine on devices violated antitrust laws designed to promote fair competition.</span>
 
-<span style="font-size: 1.2em;">- The court found that Google's monopolistic practices limited consumer choices and innovation in the search engine market, raising concerns about a single company's control over information access.</span>
+<span style="font-size: 1.2em;">- The court found that Google's practices limited consumer choices in search engines, raising concerns about a single company's control over information access.</span>
 <span style="font-size: 1.2em;"><br></span>
 
 <span style="font-size: 1.2em;"><br></span>
 <span style="font-size: 1.2em;">Ethical Concerns:</span>
 
-<span style="font-size: 1.2em;">- By making itself the default search engine, Google potentially limited users' exposure to alternative search options, affecting their autonomy in choosing information sources.</span>
+<span style="font-size: 1.2em;">- By making itself the default search engine, Google potentially limited users' exposure to alternative search optionss.</span>
 
 <span style="font-size: 1.2em;">- Google's dominance allowed extensive data collection, raising ethical questions about user consent and the potential misuse of personal information.</span>
 <span style="font-size: 1.2em;"><br></span>
@@ -203,21 +206,21 @@ permalink: /legalandethical/
 
 <span style="font-size: 1.2em;">- When Google gives priority to paid advertisements and sponsored content, users most liekly see results from companies that pay Google the most, which may not always provide relevant and unbiased information.</span>
 
-<span style="font-size: 1.2em;">- Example: If a user searches for “best smartphones 2025,” the first few results will likely be paid promotions from brands that bid the highest on Google Ads rather than independent, unbiased reviews.</span>
+<span style="font-size: 1.2em;">- Example: If a user searches for “best smartphones 2025,” the first few results will likely be paid promotions rather than independent reviews.</span>
 <span style="font-size: 1.2em;"><br></span>
 
 <span style="font-size: 1.2em;"><br></span>
 <span style="font-size: 1.2em;">Consumer Trust and Deceptive Practices</span>
 
-<span style="font-size: 1.2em;">- Many users assume that the top search results are the most relevant and credible, and Google’s algorithm does not prioritize accuracy or user benefit but rather revenue generation.</span>
+<span style="font-size: 1.2em;">- Google’s algorithm does not prioritize accuracy or user benefit but now leans toward revenue generation.</span>
 
-<span style="font-size: 1.2em;">- Example: If someone searches for “best healthcare provider near me,” they may be directed to a sponsored clinic that paid for a top spot rather than one with the highest patient ratings or best medical services.</span>
+<span style="font-size: 1.2em;">- Example: If someone searches for “best healthcare provider near me,” they may be directed to a sponsored clinic rather than one with the highest patient ratings or best medical services.</span>
 <span style="font-size: 1.2em;"><br></span>
 
 <span style="font-size: 1.2em;"><br></span>
 <span style="font-size: 1.2em;">Impact on Small Businesses & Competition</span>
 
-<span style="font-size: 1.2em;">- Smaller businesses that can’t afford to outbid large corporations for advertising space struggle to gain visibility. This demonstrates Google’s monopoly, as businesses become dependent on Google Ads to compete.</span>
+<span style="font-size: 1.2em;">- Smaller businesses can’t afford to outbid large corporations for advertising. This demonstrates Google’s monopoly, as businesses become dependent on Google Ads to compete.</span>
 
 <span style="font-size: 1.2em;">- Example: A local coffee shop trying to compete with Starbucks may have trouble appearing in search results because Starbucks can pay for priority placement.</span>
 <span style="font-size: 1.2em;"><br></span>
@@ -325,7 +328,8 @@ permalink: /legalandethical/
 <span style="font-size: 1.2em;">- On the google form, copy and paste the link to your repo and the name of your license file.</span>
 
 <span style="font-size: 1.2em;"><br></span>
-<span style="font-size: 1.2em;">- Go to the following Quizlet flashcards (the same one from the Quizlet Live) and click on the "Match" button</span>
+<span style="font-size: 1.2em;">- Go to the following Quizlet flashcards and click on the "Match" button:<br></span>
+<span style="font-size: 1.2em;">[![Quizlet](https://img.shields.io/badge/Study%20Flashcards-Quizlet-blue?style=for-the-badge)](https://quizlet.com/1024970553/understanding-intellectual-property-and-licensing-flash-cards/?i=2fgan2&x=1jqt)<br></span>
 
 - Your goal is to get a under 20 seconds (should be easy), if you get under 10 seconds it is extra credit
 
