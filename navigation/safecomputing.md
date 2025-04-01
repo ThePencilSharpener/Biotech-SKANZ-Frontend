@@ -10,6 +10,17 @@ Safe computing is essential to protect personal information, maintain system int
 
 
 ## Key Principles
+
+> IOC-2.A: Describe the risks to privacy from collecting and storing personal data on a computer system
+
+>> IOC-2.A.1: Personally identifiable information (PII) is information about an individual that identifies, links, relates, or describes them. Examples of PII include: Social Security number, age, race, phone number(s), medical information, financial information, biometric data
+
+>> IOC-2.A.2: Search engines can record and maintain a history of searches made by users.
+
+>> IOC-2.A.3: Websites can record and maintain a history of individuals who have viewed their pages
+
+>> IOC-2.A.4: Devices, websites, and networks can collect information about a user's location.
+
 ### 1. **Protect Personal Information (IOC Objective: Data Protection)**
 Protecting your personal information is the first step toward safe computing. Cybercriminals often exploit weak security practices to gain unauthorized access to sensitive data. To mitigate these risks:
 - Use strong, unique passwords for each account. A strong password typically includes a mix of uppercase and lowercase letters, numbers, and special characters.
