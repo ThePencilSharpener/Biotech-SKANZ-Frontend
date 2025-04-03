@@ -6,7 +6,7 @@ hide: true
 menu: nav/home.html
 ---
 
-### This site is under construction, will be completed once feature is developed...
+### The site is under construction, will be completed once feature is developed...
 
 #### Panera visit (for planning Legal and Ethical Concerns lesson):
 <p></p>
