@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 5.5 Legal and Ethical Concerns  
+title: Legal and Ethical Concerns
 search_exclude: true
 permalink: /legalandethical/
 ---
@@ -337,3 +337,7 @@ permalink: /legalandethical/
 
 - Upload the image of your screenshot and submit the form
 <span style="font-size: 1.2em;"><br></span>
+
+#### Panera visit (for planning Legal and Ethical Concerns lesson):
+<p></p>
+![Image](https://github.com/user-attachments/assets/92b414a6-6355-4091-a565-a7395cf34430)

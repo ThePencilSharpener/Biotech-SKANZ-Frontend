@@ -4,42 +4,98 @@ Nighthawk Pages is a project designed to support students in their Computer Scie
 
 GitHub Pages can be customized by the blogger to support computer science learnings as the student works through the pathway of using Javascript, Python/Flask, Java/Spring.  
 
-## Student Requirements
+This repository contains the frontend code for Bio-SKANZ, an interactive educational platform that showcases biotech innovations from Scripps Research through engaging games and simulations enhanced by AI/ML.
 
-Del Norte HS students will be required to review their personal GitHub Pages at each midterm and final.  This review will contain a compilation of personal work performed within each significant grading period.
+Our mission is to increase engagement with Scripps Research’s audience by 30% through an immersive learning experience hosted right in the browser.
 
-In general, Students and Teachers are expected to use GitHub pages to build lessons, complete classroom hacks, perform work on JavaScript games, and serve as a frontend to full-stack applications.
+## Project Overview
 
-Exchange of information could be:
+Bio-SKANZ combines machine learning, game-based learning, and biotech education into one platform. This frontend is the UI/UX layer of the platform, where users will:
 
-1. sharing a file:  `wget "raw-link.ipynb"
-2. creating a template from this repository
-3. sharing a fork among team members
-4. etc.
+- Run virtual lab simulations and experiment with biotech techniques
+
+- Take part in an adaptive trivia challenge that gets smarter with every answer
+
+- Explore breakthrough biotech innovations through a discovery quest
+
+- All interactions are designed to be intuitive, engaging, and informative—helping bridge the gap between science communication and public engagement.
 
 ---
 
 ## History
 
-This project is in its 3rd revision (aka 3.0).
-
-The project was initially based on Fastpages. But this project has diverged from those roots into an independent entity.  The decision to separate from Fastpages was influenced by the deprecation of Fastpages by authors.  It is believed by our community that the authors of fastpages turned toward Quatro.  After that change of direction fastpages did not align with the Teacher's goals and student needs. The Nighthawk Pages project has more of a raw development blogging need.
+This project is in its 1st version (1.0) and can be used to make a second version (2.0) for the class of 2026.
 
 ### License
 
-The Apache license has its roots in Fastpages.  Thus, it carries its license forward.  However, most of the code is likely unrecognizable from those roots.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ### Key Features
 
-- **Code Examples**: Provides practical coding examples in JavaScript, including a platformer game, and frontend code for user databases using Python and Java backends.
-- **Educational Blogs**: Offers instructional content on various topics such as developer tools setup, deployment on AWS, SQL databases, machine learning, and data structures. It utilizes Jupyter Notebooks for interactive lessons and coding challenges.
-- **Tools and Integrations**: Features GitHub actions for blog publishing, Utterances for blog commenting, local development support via Makefile and scripts, and styling with the Minima Theme and SASS. It also includes a new integration with GitHub Projects and Issues.
+- Biotech Lab Simulation – A virtual space for exploring biotech methods
 
-### Contributions
+- Adaptive Biotech Trivia – Difficulty adjusts in real-time using ML predictions
 
-- **Notable Contributions**: Highlights significant contributions to the project, including theme development, search and tagging functionality, GitHub API integration, and the incorporation of GitHub Projects into GitHub pages. Contributors such as Tirth Thakker, Mirza Beg, and Toby Ledder have played crucial roles in these developments.
+- Innovation Discovery Quest – A guided journey through real-world Scripps innovations
 
-- **Blog Contributions**:  Often students contribute articles and blogs to this project.  Their names are typically listed in the front matter of their contributing post.
+These features are designed to promote scientific literacy and social media engagement in a gamified way.
+
+---
+
+### Contributers and Roles
+
+The project team is structured to maximize efficiency across software development, data analysis, and engagement strategies.  
+
+| Name   | Role                      |
+|--------|---------------------------|
+| Shaurya Singh         | Scrum Master              |
+| Alex Gustaf           | Backend Engineer          |
+| Zaid Alrefai          | Machine Learning Engineer |
+| Kush Kharia           | Assistant Scrum Master    |
+| Nikith Muralikrishnan | Frontend Engineer         |
+
+
+### Scrum Master
+- Make sure everyone understands the project goals
+- Keep everyone on time per their tasks to manage responsibility
+- Work closely with Frontend Engineer to create an interactive and functional frontend design that aligns with the goal of this Pilot city project
+
+### Assistant Scrum Master
+- Find databases to use for Machine Learning
+- Work closely with Zaid(Machine Learning Engineer) to train algorithm to predict certain events based on the game
+- Encourage team collaboration and transparency on efficiency
+
+### Backend Engineer
+- Create UML Diagram and Figma designs
+- Create API file 
+- Create Model file and database to store data
+- Work on restore, db_init, and backup to save data in case of emergencies
+
+### Machine Learning Engineer
+- Create machine Learning code to train algorithm to make predictions based on inputs(example is Scikit-learn)
+- Clean, sort, and extract data from database using pandas
+
+### Frontend Engineer
+- Create visually appealing and aesthetic design for user interactions and to promote Scripps Research
+- Create fetch functions to fetch data from database
+- Display data in a visually appealing way(NOT ALERTS LIKE LAST TIME)
+ 
+---
+
+### Tools
+
+- Programming: Python, JavaScript  
+- Data Handling: Pandas, NumPy, SQL    
+- Deployment: Docker, AWS  
+- Project Management: GitHub, VSCode
+
+---
+
+### Product
+
+- A fully functional interactive lab simulation educating users on biotech innovations.  
+- Increased social media engagement by 30%, proving the effectiveness of learning.  
+- A demonstration of Scripps Research’s biotech breakthroughs through a platform.  
 
 ---
 
@@ -55,8 +111,8 @@ The absolutes in setup up...
 **Update `_config.yml`**: You need to modify the `_config.yml` file to reflect your repository's name. This configuration is crucial because it ensures that your project's styling is correctly applied, making your deployed site look as intended rather than unstyled or broken.
 
 ```text
-github_repo: "portfolio_2025" 
-baseurl: "/portfolio_2025"
+github_repo: "your_repo_name" 
+baseurl: "/your_repo_name"
 ```
 
 **Set Repository Name in Makefile**: Adjust the `REPO_NAME` variable in your Makefile to match your GitHub repository's name. This action facilitates the automatic updating of posts and notebooks on your local development server, improving the development process.
@@ -64,7 +120,7 @@ baseurl: "/portfolio_2025"
 ```make
 # Configuration, override port with usage: make PORT=4200
 PORT ?= 4887
-REPO_NAME ?= flocker_frontend 
+REPO_NAME ?= your_repo_name 
 LOG_FILE = /tmp/jekyll$(PORT).log
 ```
 
@@ -85,11 +141,11 @@ Quick start.  A quick start below is a reminder, but is dependent on your knowle
 
 #### Clone Repo
 
-Run these commands to obtain the project, then locate into the project directory with the terminal, install an extensive set of tools, and make.
+Run these commands in your ubuntu terminal to obtain the project, then locate into the project directory with the terminal, install an extensive set of tools, and make.
 
 ```bash
-git clone <this-repo> # git clone https://github.com/nighthawkcoders/portfolio_2025.git 
-cd <repo-dir>/scripts # cd portfolio_2025
+git clone <this-repo> # git clone https://github.com/ThePencilSharpener/Biotech-SKANZ-Frontend.git 
+cd <repo-dir>/scripts # cd Biotech-SKANZ-Frontend
 ```
 
 #### Windows WSL and/or Ubuntu Users
@@ -132,7 +188,7 @@ Start the preview server in the terminal,
 The terminal output from `make` shows the server address. "Cmd" or "Ctl" click the http location to open the preview server in a browser. Here is an example Server address message, click on the Server address to load:...
 
   ```text
-  http://0.0.0.0:4887/flocker_frontend/
+  http://0.0.0.0:4887/Binary-SKANZ-Frontend/
   ```
 
 ### Regeneration of web application
@@ -146,7 +202,7 @@ Save on ".ipynb" or ".md" file activiates "regeneration". An example terminal me
 
 ### Other "make" commands
 
-Terminal messages are generated from background processes.  At any time, click return or enter in a terminal window to obtain a prompt.  Once you have the prompt you can use the terminal as needed for other tasks.  Always return to the root of project `cd ~/vscode/portfolio_2025` for all "make" actions.
+Terminal messages are generated from background processes.  At any time, click return or enter in a terminal window to obtain a prompt.  Once you have the prompt you can use the terminal as needed for other tasks.  Always return to the root of project `cd ~/vscode/Biotech-SKANZ-Frontend` for all "make" actions.
 
 #### Stop the preview server
 
@@ -248,7 +304,6 @@ In the front matter, you can also define things like a title and description for
   title: Jupyter Python Sample
   description: Example Blog!!!  This shows code and notes from hacks.
   type: ccc
-  courses: { csa: {week: 5} }
   ---
   ```
 
