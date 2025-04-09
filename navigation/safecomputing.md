@@ -30,9 +30,18 @@ permalink: /safecomputing/
 
 ### Personal Identifiable Information (PII)
 
+<<<<<<< HEAD
 - **PII** includes details relating to someone's identity
   - Includes (but is not limited to) full name, Social Security number, email address, and banking information
   - If exposed, it can lead to identity theft or fraud
+=======
+### 3. **Practice Safe Browsing (IOC Objective: Internet Safety)**
+The internet is a vast resource, but it also harbors risks. To browse safely:
+- Avoid clicking on suspicious links or downloading unknown files, as they may contain malware or lead to phishing sites.
+- Verify website URLs before entering sensitive information. Look for typos or slight variations in domain names that could indicate a fake site.
+- Use secure (HTTPS) websites for online transactions. The "S" in HTTPS stands for "secure," indicating that the connection is encrypted.
+- <a href="https://www.youtube.com/watch?v=42YkKl--ngk">"Safe Computing Video"</a>
+>>>>>>> 545084c (FE)
 
 ![](https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/670fd07dd5af54a18d191494_643fd49b00b2f069711650b6_60a4e79a9e000ddf7f657c3b_PII%2520data.png)
 
