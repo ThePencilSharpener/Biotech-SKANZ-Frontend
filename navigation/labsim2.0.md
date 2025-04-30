@@ -9,11 +9,11 @@ permalink: /labsim2.0/
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Lab Adventure</title>
+  <title>Science Trivia</title>
   <style>
     body {
-        background: linear-gradient(150deg, #0E3348, #247994, #147EA0, #0F547B);
-        color: #ffffff;
+        background: linear-gradient(150deg,rgb(89, 82, 0),rgb(255, 234, 0),rgb(255, 238, 160));
+        color:rgb(4, 2, 2);
         font-family: Arial, sans-serif;
         min-height: 100vh;
         margin: 20px;
@@ -23,7 +23,7 @@ permalink: /labsim2.0/
         overflow-y: auto;
     }
     .container {
-        background: ;
+        background: rgba(255, 255, 255, 0.1);
         padding: 30px;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -34,13 +34,13 @@ permalink: /labsim2.0/
     h2, h3 {
         color: rgb(0, 0, 0);
         border-bottom: 4px solid #000000;
-        padding: 10px; /* Space around the text */
-        margin-bottom: 20px
+        padding: 10px;
+        margin-bottom: 20px;
     }
     #options {
         display: flex;
         flex-direction: column;
-        gap: 20px; /* Adds space between the two buttons */
+        gap: 20px;
         margin-top: 20px;
     }
     .button {
@@ -54,8 +54,8 @@ permalink: /labsim2.0/
         transition: background-color 0.3s ease, transform 0.1s ease;
         font-weight: bold;
         color: black !important;
-        margin: 0 auto; /* Center the button */
-        width: 80%; /* Optional: Make all buttons same width */
+        margin: 0 auto;
+        width: 80%;
         text-align: center;
     }
     .button:hover {
@@ -74,15 +74,22 @@ permalink: /labsim2.0/
         border: 1px solid #ccc;
         border-radius: 8px;
     }
+    #difficulty {
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
 
 <div class="container" id="lab">
   <h2 id="scenario">Loading...</h2>
+  <p id="difficulty"></p>
   <div id="options"></div>
   <div id="gameOver" style="display:none;">
-    <h2>Lab Over!</h2>
+    <h2>Game Over!</h2>
     <p id="score"></p>
     <input type="text" id="nameInput" placeholder="Enter your name" />
     <br>
@@ -92,128 +99,150 @@ permalink: /labsim2.0/
   </div>
 </div>
 
-<script type="module" defer>
-  const questions = [
-    {
-        scenario: 'You are isolating DNA. To make the DNA strands visible, do you add ethanol or water?',
-        options: ['Ethanol', 'Water'],
-        correct: 'Ethanol',
-    },
-    {
-        scenario: 'You need to copy a specific segment of DNA. Do you use PCR or gel electrophoresis?',
-        options: ['PCR', 'Gel Electrophoresis'],
-        correct: 'PCR',
-    },
-    {
-        scenario: 'You are designing an mRNA vaccine. Do you code the mRNA for an antigen or an antibody?',
-        options: ['Antibody', 'Antigen'],
-        correct: 'Antigen',
-    },
-    {
-        scenario: 'When testing a vaccine’s safety, do you first conduct animal trials or human trials?',
-        options: ['Animal Trials', 'Human Trials'],
-        correct: 'Animal Trials',
-    },
-    {
-        scenario: 'You want to check the quality of extracted DNA. Should you use a spectrophotometer or a microscope?',
-        options: ['Microscope', 'Spectrophotometer'],
-        correct: 'Spectrophotometer',
-    },
-    {
-        scenario: 'You are making a DNA vaccine. Should you inject the patient with plasmid DNA or viral RNA?',
-        options: ['Viral RNA', 'Plasmid DNA'],
-        correct: 'Plasmid DNA',
-    },
-    {
-        scenario: 'After receiving a vaccine, your body produces memory cells. Are these B cells or red blood cells?',
-        options: ['Red blood cells', 'B cells'],
-        correct: 'B cells',
-    },
-  ];
+<script>
+// Define the backend URI (similar to your previous implementation)
+var pythonURI;
+if (location.hostname === "localhost") {
+        pythonURI = "http://localhost:8887";
+} else if (location.hostname === "127.0.0.1") {
+        pythonURI = "http://127.0.0.1:8887";
+} else {
+        pythonURI =  "https://flocker.nighthawkcodingsociety.com";
+}
 
-  let currentQuestion = 0;
-  let points = 0;
+let questions = [];
+let currentDifficulty = 3;
+let points = 0;
+let correctStreak = 0;
+let wrongStreak = 0;
 
-  function loadQuestion() {
-      const lab = document.getElementById('lab');
-      const scenario1 = document.getElementById('scenario');
-      const options1 = document.getElementById('options');
+// Fetch questions
+async function fetchQuestions() {
+  try {
+    console.log("Fetching questions...");
+    const response = await fetch(`${pythonURI}/api/questions`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch questions: ${response.status}`);
+    }
+    const data = await response.json();
+    if (!Array.isArray(data) || data.length === 0) {
+      throw new Error("No questions found in the response.");
+    }
+    questions = data.map(q => ({
+      question: q.scenario,
+      distractor1: q.options[1],
+      distractor2: q.options[2],
+      distractor3: q.options[0],
+      correct_answer: q.answer,
+      difficulty_rating: q.difficulty
+    }));
+    console.log("Questions fetched:", questions);
+    loadQuestion();
+  } catch (error) {
+    console.error('Error fetching questions:', error);
+    document.getElementById('scenario').textContent = "Hmm, the server seems to be down. Please try again later.";
+  }
+}
 
-      // Clear previous options
-      options1.innerHTML = '';
+function getQuestionByDifficulty(difficulty) {
+  const filtered = questions.filter(q => parseInt(q.difficulty_rating) === difficulty);
+  return filtered[Math.floor(Math.random() * filtered.length)];
+}
 
-      // Hide game over screen if showing
-      document.getElementById('gameOver').style.display = 'none';
-      scenario1.style.display = 'block';
-      options1.style.display = 'block';
+function loadQuestion() {
+  console.log("Loading question...");
+  const currentQuestion = getQuestionByDifficulty(currentDifficulty);
+  console.log("Current question:", currentQuestion);
 
-      // Check if out of questions
-      if (currentQuestion >= questions.length) {
-        endLab();
+  if (!currentQuestion) {
+    endLab();
+    return;
+  }
+
+  document.getElementById('scenario').textContent = currentQuestion.question;
+  document.getElementById('difficulty').textContent = `Difficulty Level: ${currentQuestion.difficulty_rating}`;
+  const optionsDiv = document.getElementById('options');
+  optionsDiv.innerHTML = '';
+
+  const options = [
+    currentQuestion.correct_answer,
+    currentQuestion.distractor1,
+    currentQuestion.distractor2,
+    currentQuestion.distractor3
+  ].sort(() => Math.random() - 0.5);
+
+  options.forEach(option => {
+    const button = document.createElement('button');
+    button.textContent = option;
+    button.classList.add('button');
+    button.onclick = () => checkAnswer(option, currentQuestion.correct_answer);
+    optionsDiv.appendChild(button);
+  });
+}
+
+function endLab() {
+  document.getElementById('scenario').textContent = "No more questions available.";
+  document.getElementById('options').innerHTML = '';
+}
+
+function checkAnswer(selected, correct) {
+  if (selected === correct) {
+    points++;
+    correctStreak++;
+    wrongStreak = 0; // Reset wrong streak on a correct answer
+    if (currentDifficulty < 5) currentDifficulty++;
+    if (correctStreak === 3 && currentDifficulty === 5) {
+      winGame();
+      return;
+    }
+  } else {
+    correctStreak = 0;
+    if (currentDifficulty > 1) {
+      currentDifficulty--; // Decrease difficulty
+      wrongStreak = 0; // Reset wrong streak when difficulty changes
+    } else {
+      wrongStreak++; // Increment wrong streak only at difficulty level 1
+      if (wrongStreak === 3) {
+        loseGame();
         return;
       }
-
-      // Set scenario
-      scenario1.textContent = questions[currentQuestion].scenario;
-
-      // Create new option buttons
-      questions[currentQuestion].options.forEach(option => {
-        const button = document.createElement('button');
-        button.textContent = option;
-        button.onclick = () => checkAnswer(option);
-  
-        // Style the button
-        button.style.display = 'block';    // make it stack vertically
-        button.style.margin = '10px auto'; // 10px margin top/bottom, auto left/right to center
-        button.style.width = '80%';       // make button 80px wide
-        button.style.textAlign = 'center'; // center the text inside the button
-
-        options1.appendChild(button);
-      });
-  }
-
-  function checkAnswer(selected) {
-    if (selected === questions[currentQuestion].correct) {
-      points++;
-      currentQuestion++;
-      if (currentQuestion === questions.length) {
-        // If it's the last question and it's correct
-        document.getElementById('lab').innerHTML = `
-          <h2>You Win!</h2>
-          <p id="score">Points: ${points}</p>
-          <input type="text" id="nameInput" placeholder="Enter your name" />
-          <br>
-          <button onclick="submitScore()">Submit Score</button>
-          <p id="submitMessage"></p>
-        `;
-      } else {
-        loadQuestion();
-      }
-    } else {
-      // Wrong answer
-      document.getElementById('scenario').style.display = 'none';
-      document.getElementById('options').style.display = 'none';
-      document.getElementById('gameOver').style.display = 'block';
-      document.getElementById('score').textContent = `Points: ${points}`;
     }
   }
+  loadQuestion();
+}
 
-  import { pythonURI, fetchOptions } from '../assets/js/api/config.js';
+function winGame() {
+  document.getElementById('scenario').style.display = 'none';
+  document.getElementById('options').style.display = 'none';
+  document.getElementById('gameOver').style.display = 'block';
+  document.getElementById('score').textContent = `Points: ${points}`;
+  document.getElementById('gameOver').querySelector('h2').textContent = 'You Win!';
+}
 
-  function restartLab() {
-      console.log("restartLab called");
-      currentQuestion = 0;
-      points = 0;
-      document.getElementById('gameOver').style.display = 'none';
-      document.getElementById('nameInput').value = '';
-      document.getElementById('submitMessage').textContent = '';
-      document.getElementById('playAgainButton').style.display = 'none';
-      document.getElementById('scenario').style.display = 'block';
-      document.getElementById('options').style.display = 'block';
-      loadQuestion();  // 🚀 restart with the first question
-  }
+function loseGame() {
+  document.getElementById('scenario').style.display = 'none';
+  document.getElementById('options').style.display = 'none';
+  document.getElementById('gameOver').style.display = 'block';
+  document.getElementById('score').textContent = `Points: ${points}`;
+  document.getElementById('gameOver').querySelector('h2').textContent = 'Game Over!';
+}
 
-  async function submitScore() {
+function restartLab() {
+  currentDifficulty = 3;
+  points = 0;
+  correctStreak = 0;
+  wrongStreak = 0;
+  document.getElementById('gameOver').style.display = 'none';
+  document.getElementById('nameInput').value = '';
+  document.getElementById('submitMessage').textContent = '';
+  document.getElementById('playAgainButton').style.display = 'none';
+  document.getElementById('scenario').style.display = 'block';
+  document.getElementById('options').style.display = 'block';
+  loadQuestion();
+}
+
+// Submit score
+async function submitScore() {
       const name = document.getElementById('nameInput').value;
       if (name.trim() === '') {
           alert('Please enter your name.');
@@ -235,26 +264,17 @@ permalink: /labsim2.0/
           if (response.ok) {
               alert(`Thank you, ${name}! Your score was submitted.`);
               document.getElementById('playAgainButton').style.display = 'inline-block';
-      
-              // Clear the name input field
-              document.getElementById('nameInput').value = '';
-
-              // Reset currentQuestion and points to start fresh for next play
-              currentQuestion = 0;
-              points = 0;
-
-              // Reload the first question
-              loadQuestion();
           } else {
               throw new Error('Network response failed');
           }
       } catch (error) { // Handle any errors during fetch
           console.error("There was a problem with the fetch", error);
       }
-  }
-  window.submitScore = submitScore;
-  window.restartLab = restartLab;
-  loadQuestion();
+}
+
+fetchQuestions(); // Start by fetching questions
+window.submitScore = submitScore;
+window.restartLab = restartLab;
 
 </script>
 
