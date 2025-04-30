@@ -52,6 +52,32 @@ search_exclude: true
         </a>
       </div>
     </div>
-  </section>
+    </section>
+    <!-- Partnership Section -->
+    <section class="py-16 bg-gray-800 text-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row bg-gray-900 rounded-2xl shadow-2xl overflow-hidden min-h-[22rem]">
+
+        <!-- Image Container -->
+        <div class="relative w-full md:w-1/2 h-auto md:h-auto">
+            <div class="absolute inset-0 bg-gradient-to-l from-gray-900 to-transparent z-10"></div>
+            <img 
+            src="{{ site.baseurl }}/images/scripps.jpg" 
+            alt="Scripps Research"
+            class="w-full h-full object-cover object-center relative z-0"
+            >
+        </div>
+
+        <!-- Text Content -->
+        <div class="p-8 md:w-1/2 flex flex-col justify-center z-10">
+            <h2 class="text-3xl font-bold mb-4 text-green-300">Partnering with Scripps Research</h2>
+            <p class="text-gray-300 text-lg">
+            We are working with Scripps Research to develop fun, educational games that make their groundbreaking biomedical contributions more accessible to students and the public. By gamifying key concepts and tools, we aim to raise awareness and inspire curiosity in real-world science.
+            </p>
+        </div>
+
+        </div>
+    </div>
+    </section>
 
 </div>
