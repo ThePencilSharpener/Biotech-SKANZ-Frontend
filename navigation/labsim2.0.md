@@ -5,90 +5,19 @@ search_exclude: true
 permalink: /labsim2.0/
 ---
 
+<div class="min-h-screen bg-gradient-to-br from-[#0E3348] via-[#247994] to-[#0F547B] text-white flex justify-center items-center p-6">
+  <div class="bg-gray-900 bg-opacity-70 p-8 rounded-xl shadow-xl w-full max-w-lg text-center" id="lab">
+    <h2 id="scenario" class="text-2xl font-bold text-white border-b-4 border-white pb-2 mb-4">Loading...</h2>
+    <div id="options" class="flex flex-col space-y-4"></div>
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Lab Adventure</title>
-  <style>
-    body {
-        background: linear-gradient(150deg, #0E3348, #247994, #147EA0, #0F547B);
-        color: #ffffff;
-        font-family: Arial, sans-serif;
-        min-height: 100vh;
-        margin: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow-y: auto;
-    }
-    .container {
-        background: ;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        max-width: 500px;
-        width: 100%;
-        text-align: center;
-    }
-    h2, h3 {
-        color: rgb(0, 0, 0);
-        border-bottom: 4px solid #000000;
-        padding: 10px; /* Space around the text */
-        margin-bottom: 20px
-    }
-    #options {
-        display: flex;
-        flex-direction: column;
-        gap: 20px; /* Adds space between the two buttons */
-        margin-top: 20px;
-    }
-    .button {
-        all: unset;
-        background-color: white !important;
-        border: 2px solid #ccc;
-        border-radius: 12px;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.1s ease;
-        font-weight: bold;
-        color: black !important;
-        margin: 0 auto; /* Center the button */
-        width: 80%; /* Optional: Make all buttons same width */
-        text-align: center;
-    }
-    .button:hover {
-        background-color: gray !important;
-        transform: scale(1.05);
-    }
-    .button:active {
-        background-color: darkgrey !important;
-        transform: scale(0.95);
-    }
-    input {
-        padding: 10px;
-        width: 80%;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-    }
-  </style>
-</head>
-<body>
-
-<div class="container" id="lab">
-  <h2 id="scenario">Loading...</h2>
-  <div id="options"></div>
-  <div id="gameOver" style="display:none;">
-    <h2>Lab Over!</h2>
-    <p id="score"></p>
-    <input type="text" id="nameInput" placeholder="Enter your name" />
-    <br>
-    <button onclick="submitScore()">Submit Score</button>
-    <p id="submitMessage"></p>
-    <button id="playAgainButton" style="display:none; margin-top: 10px;" onclick="restartLab()">Play Again</button>
+    <div id="gameOver" class="hidden">
+      <h2 class="text-2xl font-bold text-white border-b-4 border-white pb-2 mb-2">Lab Over!</h2>
+      <p id="score" class="mb-4"></p>
+      <input type="text" id="nameInput" placeholder="Enter your name" class="p-2 rounded-md w-4/5 text-black mb-4" />
+      <button onclick="submitScore()" class="bg-gray-800 text-white font-bold py-2 px-4 rounded-xl hover:bg-gray-700 active:bg-gray-900 w-4/5 mx-auto">Submit Score</button>
+      <p id="submitMessage" class="mt-2"></p>
+      <button id="playAgainButton" onclick="restartLab()" class="bg-gray-800 text-white font-bold py-2 px-4 rounded-xl hover:bg-gray-700 active:bg-gray-900 mt-4 hidden w-4/5 mx-auto">Play Again</button>
+    </div>
   </div>
 </div>
 
@@ -135,41 +64,29 @@ permalink: /labsim2.0/
   let points = 0;
 
   function loadQuestion() {
-      const lab = document.getElementById('lab');
-      const scenario1 = document.getElementById('scenario');
-      const options1 = document.getElementById('options');
+    const scenario = document.getElementById('scenario');
+    const optionsDiv = document.getElementById('options');
+    const gameOver = document.getElementById('gameOver');
 
-      // Clear previous options
-      options1.innerHTML = '';
+    scenario.style.display = 'block';
+    optionsDiv.style.display = 'block';
+    gameOver.classList.add('hidden');
+    optionsDiv.innerHTML = '';
 
-      // Hide game over screen if showing
-      document.getElementById('gameOver').style.display = 'none';
-      scenario1.style.display = 'block';
-      options1.style.display = 'block';
+    if (currentQuestion >= questions.length) {
+      endLab();
+      return;
+    }
 
-      // Check if out of questions
-      if (currentQuestion >= questions.length) {
-        endLab();
-        return;
-      }
+    scenario.textContent = questions[currentQuestion].scenario;
 
-      // Set scenario
-      scenario1.textContent = questions[currentQuestion].scenario;
-
-      // Create new option buttons
-      questions[currentQuestion].options.forEach(option => {
-        const button = document.createElement('button');
-        button.textContent = option;
-        button.onclick = () => checkAnswer(option);
-  
-        // Style the button
-        button.style.display = 'block';    // make it stack vertically
-        button.style.margin = '10px auto'; // 10px margin top/bottom, auto left/right to center
-        button.style.width = '80%';       // make button 80px wide
-        button.style.textAlign = 'center'; // center the text inside the button
-
-        options1.appendChild(button);
-      });
+    questions[currentQuestion].options.forEach(option => {
+      const button = document.createElement('button');
+      button.textContent = option;
+      button.className = "bg-gray-800 text-white font-bold py-2 px-4 rounded-xl hover:bg-gray-700 active:bg-gray-900 w-4/5 mx-auto";
+      button.onclick = () => checkAnswer(option);
+      optionsDiv.appendChild(button);
+    });
   }
 
   function checkAnswer(selected) {
@@ -177,86 +94,74 @@ permalink: /labsim2.0/
       points++;
       currentQuestion++;
       if (currentQuestion === questions.length) {
-        // If it's the last question and it's correct
         document.getElementById('lab').innerHTML = `
-          <h2>You Win!</h2>
-          <p id="score">Points: ${points}</p>
-          <input type="text" id="nameInput" placeholder="Enter your name" />
-          <br>
-          <button onclick="submitScore()">Submit Score</button>
-          <p id="submitMessage"></p>
+          <h2 class="text-2xl font-bold text-white border-b-4 border-white pb-2 mb-2">You Win!</h2>
+          <p id="score" class="mb-4">Points: ${points}</p>
+          <input type="text" id="nameInput" placeholder="Enter your name" class="p-2 rounded-md w-4/5 text-black mb-4" />
+          <button onclick="submitScore()" class="bg-gray-800 text-white font-bold py-2 px-4 rounded-xl hover:bg-gray-700 active:bg-gray-900 w-4/5 mx-auto">Submit Score</button>
+          <p id="submitMessage" class="mt-2"></p>
         `;
       } else {
         loadQuestion();
       }
     } else {
-      // Wrong answer
       document.getElementById('scenario').style.display = 'none';
       document.getElementById('options').style.display = 'none';
-      document.getElementById('gameOver').style.display = 'block';
+      const gameOver = document.getElementById('gameOver');
+      gameOver.classList.remove('hidden');
       document.getElementById('score').textContent = `Points: ${points}`;
     }
   }
 
   import { pythonURI, fetchOptions } from '../assets/js/api/config.js';
 
-  function restartLab() {
-      console.log("restartLab called");
-      currentQuestion = 0;
-      points = 0;
-      document.getElementById('gameOver').style.display = 'none';
-      document.getElementById('nameInput').value = '';
-      document.getElementById('submitMessage').textContent = '';
-      document.getElementById('playAgainButton').style.display = 'none';
-      document.getElementById('scenario').style.display = 'block';
-      document.getElementById('options').style.display = 'block';
-      loadQuestion();  // 🚀 restart with the first question
-  }
-
   async function submitScore() {
-      const name = document.getElementById('nameInput').value;
-      if (name.trim() === '') {
-          alert('Please enter your name.');
-          return;
+    const name = document.getElementById('nameInput').value;
+    if (name.trim() === '') {
+      alert('Please enter your name.');
+      return;
+    }
+
+    const resultsData = {
+      name: name,
+      points: points,
+    };
+
+    try {
+      const response = await fetch(pythonURI + "/api/labsim", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(resultsData)
+      });
+
+      if (response.ok) {
+        alert(`Thank you, ${name}! Your score was submitted.`);
+        document.getElementById('playAgainButton').classList.remove('hidden');
+        document.getElementById('nameInput').value = '';
+        currentQuestion = 0;
+        points = 0;
+        loadQuestion();
+      } else {
+        throw new Error('Network response failed');
       }
-      const resultsData = { // Create an object with the event data
-          name: name,
-          points: points,
-      };
-      try {
-          const response = await fetch(pythonURI + "/api/labsim", { // Send a POST request
-              method: "POST", // Use POST method
-              headers: {
-                  "Content-Type": "application/json", // Set request headers
-              },
-              body: JSON.stringify(resultsData)
-          });
-
-          if (response.ok) {
-              alert(`Thank you, ${name}! Your score was submitted.`);
-              document.getElementById('playAgainButton').style.display = 'inline-block';
-      
-              // Clear the name input field
-              document.getElementById('nameInput').value = '';
-
-              // Reset currentQuestion and points to start fresh for next play
-              currentQuestion = 0;
-              points = 0;
-
-              // Reload the first question
-              loadQuestion();
-          } else {
-              throw new Error('Network response failed');
-          }
-      } catch (error) { // Handle any errors during fetch
-          console.error("There was a problem with the fetch", error);
-      }
+    } catch (error) {
+      console.error("There was a problem with the fetch", error);
+    }
   }
+
+  function restartLab() {
+    currentQuestion = 0;
+    points = 0;
+    document.getElementById('gameOver').classList.add('hidden');
+    document.getElementById('nameInput').value = '';
+    document.getElementById('submitMessage').textContent = '';
+    document.getElementById('playAgainButton').classList.add('hidden');
+    document.getElementById('scenario').style.display = 'block';
+    document.getElementById('options').style.display = 'block';
+    loadQuestion();
+  }
+
   window.submitScore = submitScore;
   window.restartLab = restartLab;
   loadQuestion();
-
 </script>
-
-</body>
-</html>

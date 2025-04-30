@@ -1,88 +1,29 @@
 ---
-layout: base 
+layout: page 
 title: Science Questions
 search_exclude: true
 permalink: /sciencequestions/
 ---
 
-<title>Science Question Predictor</title>
-<style>
-    body {
-        background: linear-gradient(150deg, #0E3348, #247994, #147EA0, #0F547B);
-        color: #ffffff;
-        font-family: Arial, sans-serif;
-        min-height: 100vh;
-        margin: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow-y: auto;
-    }
-    .container {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        max-width: 500px;
-        width: 100%;
-        text-align: center;
-    }
-    h2 {
-        color: #ffffff;
-        border-bottom: 4px solid #ffffff;
-        padding: 10px;
-        margin-bottom: 20px;
-    }
-    input[type="text"] {
-        padding: 10px;
-        width: 80%;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-size: 16px;
-    }
-    .button {
-        all: unset;
-        background-color: white;
-        border: 2px solid #ccc;
-        border-radius: 12px;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.1s ease;
-        font-weight: bold;
-        color: black;
-        margin: 0 auto;
-        width: 80%;
-        text-align: center;
-    }
-    .button:hover {
-        background-color: gray;
-        transform: scale(1.05);
-    }
-    .button:active {
-        background-color: darkgray;
-        transform: scale(0.95);
-    }
-    #result {
-        margin-top: 20px;
-        font-size: 18px;
-        color: #fff;
-        background-color: rgba(0,0,0,0.3);
-        padding: 10px;
-        border-radius: 10px;
-        display: none;
-        text-align: left;
-    }
-</style>
-<body>
-<div class="container">
-<h2>Science Question Predictor</h2>
-<input type="text" id="science-question-input" placeholder="Enter a science question..." />
-<br>
-<button class="button" id="send-question-btn">Predict Topic</button>
-<div id="result"></div>
+<div class="min-h-screen bg-gray-700 text-white flex items-center justify-center px-4 py-16">
+  <div class="bg-gray-800 rounded-2xl shadow-2xl p-8 max-w-lg w-full text-center border border-gray-600">
+    <h2 class="text-2xl font-bold text-green-300 border-b-4 border-green-300 pb-2 mb-6">
+      Science Question Predictor
+    </h2>
+    <input 
+      type="text" 
+      id="science-question-input" 
+      placeholder="Enter a science question..." 
+      class="w-full px-4 py-2 mb-4 rounded-md text-white bg-gray-900 placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400"
+    />
+    <button 
+      id="send-question-btn" 
+      class="w-full bg-green-500 text-white font-bold py-2 px-4 rounded-xl hover:bg-green-300 hover:text-gray-900 transition transform hover:scale-105 active:scale-95"
+    >
+      Predict Topic
+    </button>
+    <div id="result" class="mt-6 text-left hidden bg-gray-900 bg-opacity-80 rounded-lg p-4 border border-green-500"></div>
+  </div>
 </div>
 
 <script type="module">
@@ -97,7 +38,7 @@ async function sendScienceQuestion() {
         return;
     }
 
-    resultDiv.style.display = 'block';
+    resultDiv.classList.remove("hidden");
     resultDiv.innerHTML = "Predicting...";
 
     try {
@@ -118,19 +59,20 @@ async function sendScienceQuestion() {
         const topic = data.predicted_topic.charAt(0).toUpperCase() + data.predicted_topic.slice(1);
         const probabilities = data.probabilities;
 
-        var formattedProbs = '';
-        for (var key in probabilities) {
+        let formattedProbs = '';
+        for (let key in probabilities) {
             if (probabilities.hasOwnProperty(key)) {
-                var percent = (probabilities[key] * 100).toFixed(2);
-                var label = key.charAt(0).toUpperCase() + key.slice(1);
-                formattedProbs += '<li><strong>' + label + ':</strong> ' + percent + '%</li>';
+                const percent = (probabilities[key] * 100).toFixed(2);
+                const label = key.charAt(0).toUpperCase() + key.slice(1);
+                formattedProbs += `<li class="mb-1"><strong>${label}:</strong> ${percent}%</li>`;
             }
         }
 
-        resultDiv.innerHTML = 
-            '<p><strong>Predicted Topic:</strong> ' + topic + '</p>' +
-            '<p><strong>Confidence Levels:</strong></p>' +
-            '<ul style="list-style: none; padding: 0;">' + formattedProbs + '</ul>';
+        resultDiv.innerHTML = `
+            <p><strong>Predicted Topic:</strong> ${topic}</p>
+            <p class="mt-2"><strong>Confidence Levels:</strong></p>
+            <ul class="list-none pl-0">${formattedProbs}</ul>
+        `;
     } catch (error) {
         console.error('Error:', error);
         resultDiv.innerHTML = '<strong>Error:</strong> ' + error.message;
@@ -139,4 +81,3 @@ async function sendScienceQuestion() {
 
 document.getElementById('send-question-btn').addEventListener('click', sendScienceQuestion);
 </script>
-</body>
