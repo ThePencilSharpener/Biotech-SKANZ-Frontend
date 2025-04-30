@@ -2,7 +2,7 @@
 layout: base 
 title: Lab Simulation 2.0
 search_exclude: true
-permalink: /labsim2.0/
+permalink: /labsimgoofy/
 ---
 
 <div class="min-h-screen bg-gradient-to-br from-[#0E3348] via-[#247994] to-[#0F547B] text-white flex justify-center items-center p-6">
