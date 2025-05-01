@@ -23,16 +23,6 @@ search_exclude: true
 
   <!-- Cards Section -->
   <section class="py-16 bg-gray-700 text-white">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col justify-between transition transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-green-400">
-        <div>
-          <h3 class="text-2xl font-semibold mb-2 text-green-300">Lab Simulation</h3>
-          <p class="text-gray-300">Try our hands-on lab simulation and simulate building DNA.</p>
-        </div>
-        <a href="#" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-xl hover:bg-green-300 hover:text-gray-900 shadow-md transition">
-        Explore
-        </a>
-      </div>
       <div class="bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col justify-between transition transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-green-400">
         <div>
           <h3 class="text-2xl font-semibold mb-2 text-green-300">Trivia Game</h3>
@@ -41,7 +31,6 @@ search_exclude: true
         <a href="{{ site.baseurl }}/labsim2.0" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-xl hover:bg-green-300 hover:text-gray-900 shadow-md transition">
         Explore
         </a>
-      </div>
       <div class="bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col justify-between transition transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-green-400">
         <div>
           <h3 class="text-2xl font-semibold mb-2 text-green-300">Question Predictor</h3>
@@ -57,7 +46,6 @@ search_exclude: true
     <section class="py-16 bg-gray-800 text-white">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col md:flex-row bg-gray-900 rounded-2xl shadow-2xl overflow-hidden min-h-[22rem]">
-
         <!-- Image Container -->
         <div class="relative w-full md:w-1/2 h-auto md:h-auto">
             <div class="absolute inset-0 bg-gradient-to-l from-gray-900 to-transparent z-10"></div>
@@ -67,7 +55,6 @@ search_exclude: true
             class="w-full h-full object-cover object-center relative z-0"
             >
         </div>
-
         <!-- Text Content -->
         <div class="p-8 md:w-1/2 flex flex-col justify-center z-10">
             <h2 class="text-3xl font-bold mb-4 text-green-300">Partnering with Scripps Research</h2>
@@ -75,9 +62,15 @@ search_exclude: true
             We are working with Scripps Research to develop fun, educational games that make their groundbreaking biomedical contributions more accessible to students and the public. By gamifying key concepts and tools, we aim to raise awareness and inspire curiosity in real-world science.
             </p>
         </div>
-
         </div>
     </div>
     </section>
+        <div class="bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col justify-between transition transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-green-400">
+        <div>
+          <h3 class="text-2xl font-semibold mb-2 text-green-300">Our Internship Supervisor</h3>
+        </div>
+        <a href="https://www.scripps.edu/" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-xl hover:bg-green-300 hover:text-gray-900 shadow-md transition">
+        Click Here to go to Scripps Research
+        </a>
 
 </div>

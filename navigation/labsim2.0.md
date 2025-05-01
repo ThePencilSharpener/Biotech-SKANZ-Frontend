@@ -12,7 +12,7 @@ permalink: /labsim2.0/
   <title>Science Trivia</title>
   <style>
     body {
-        background: linear-gradient(150deg,rgb(89, 82, 0),rgb(255, 234, 0),rgb(255, 238, 160));
+        background: linear-gradient(150deg,rgba(255, 234, 0, 0.23),rgba(0, 13, 255, 0.18),rgba(179, 255, 160, 0.28));
         color:rgb(4, 2, 2);
         font-family: Arial, sans-serif;
         min-height: 100vh;
@@ -32,7 +32,7 @@ permalink: /labsim2.0/
         text-align: center;
     }
     h2, h3 {
-        color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
         border-bottom: 4px solid #000000;
         padding: 10px;
         margin-bottom: 20px;
@@ -75,9 +75,36 @@ permalink: /labsim2.0/
         border-radius: 8px;
     }
     #difficulty {
-        color: black;
+        color: white;
         font-size: 18px;
         font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .attempts-container {
+        text-align: center;
+        margin-top: 30px;
+        color: white;
+    }
+    .attempts-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        width: fit-content;
+    }
+    #playAgainButton {
+        display: inline-block;
+        margin-top: 55px;
+        font-size: 18px;
+        padding: 12px 25px;
+        border-radius: 14px;
+        margin-bottom: 10px;
+    }
+    #submitButton {
+        display: inline-block;
+        margin-top: 25px;
+        font-size: 18px;
+        padding: 12px 25px;
+        border-radius: 14px;
         margin-bottom: 10px;
     }
   </style>
@@ -91,15 +118,16 @@ permalink: /labsim2.0/
   <div id="gameOver" style="display:none;">
     <h2>Game Over!</h2>
     <p id="score"></p>
-    <input type="text" id="nameInput" placeholder="Enter your name" />
-    <br>
-    <button onclick="submitScore()">Submit Score</button>
-    <p id="submitMessage"></p>
-    <button id="playAgainButton" style="display:none; margin-top: 10px;" onclick="restartLab()">Play Again</button>
+    <p id="usernameDisplay"></p>
+    <div id="previousAttemptsContainer" class="attempts-container"></div>
+    <button id="playAgainButton" style="display:none;" onclick="restartLab()">Play Again</button>
   </div>
 </div>
 
 <script>
+const fetchOptions = {
+  credentials: 'include' // Include cookies for authentication
+};
 // Define the backend URI (similar to your previous implementation)
 var pythonURI;
 if (location.hostname === "localhost") {
@@ -211,71 +239,114 @@ function checkAnswer(selected, correct) {
   loadQuestion();
 }
 
-function winGame() {
+// Global variables to store fetched data
+let username = null;
+let previousAttempts = [];
+
+// Function to fetch the logged-in user's name from the 'posts' endpoint
+async function fetchUsername() {
+  try {
+    const response = await fetch(`${pythonURI}/api/posts/filter`, {
+      ...fetchOptions, // Use the defined fetchOptions
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ channel_id: channelId }) // Replace `channelId` with the appropriate value
+    });
+    if (!response.ok) throw new Error("Failed to fetch posts data");
+
+    const postData = await response.json();
+    if (postData.length > 0) {
+      username = postData[0].user_name; // Extract the username from the first post
+    } else {
+      username = "Guest"; // Default fallback if no posts are found
+    }
+  } catch (error) {
+    console.error("Error fetching username:", error);
+    username = "Guest"; // Default fallback
+  }
+}
+
+// Function to fetch previous attempts (points) from the 'labsim' endpoint
+async function fetchPreviousAttempts() {
+  try {
+    const response = await fetch(`${pythonURI}/api/labsim`, {
+      method: 'GET',
+      credentials: 'include', // Include cookies for authentication
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    if (!response.ok) throw new Error("Failed to fetch previous attempts");
+
+    const data = await response.json();
+    previousAttempts = data.map(attempt => attempt.points); // Extract points from each attempt
+  } catch (error) {
+    console.error("Error fetching previous attempts:", error);
+    previousAttempts = []; // Default fallback
+  }
+}
+
+// Show game-over screen with username and previous attempts
+function showGameOverScreen(message) {
+  // Hide game elements
   document.getElementById('scenario').style.display = 'none';
   document.getElementById('options').style.display = 'none';
+
+  // Show game-over screen
   document.getElementById('gameOver').style.display = 'block';
   document.getElementById('score').textContent = `Points: ${points}`;
-  document.getElementById('gameOver').querySelector('h2').textContent = 'You Win!';
+  document.getElementById('usernameDisplay').textContent = `Username: ${username}`;
+
+  // Display previous attempts
+  const container = document.getElementById('previousAttemptsContainer');
+  container.innerHTML = ''; // Clear previous content
+
+  if (previousAttempts.length > 0) {
+    const attemptsHTML = previousAttempts.map((attempt, i) => `<li>Attempt ${i + 1}: ${attempt} points</li>`).join('');
+    container.innerHTML = `
+        <h3>Previous Attempts for ${username}:</h3>
+        <ul class="attempts-list">${attemptsHTML}</ul>
+    `;
+  } else {
+    container.innerHTML = `<p>No previous attempts found.</p>`;
+  }
+
+  // Show the "Play Again" button
+  document.getElementById('playAgainButton').style.display = 'inline-block';
+}
+
+// Win or lose logic
+function winGame() {
+  showGameOverScreen('You Win!');
 }
 
 function loseGame() {
-  document.getElementById('scenario').style.display = 'none';
-  document.getElementById('options').style.display = 'none';
-  document.getElementById('gameOver').style.display = 'block';
-  document.getElementById('score').textContent = `Points: ${points}`;
-  document.getElementById('gameOver').querySelector('h2').textContent = 'Game Over!';
+  showGameOverScreen('Game Over!');
 }
 
+// Restart the game
 function restartLab() {
   currentDifficulty = 3;
   points = 0;
   correctStreak = 0;
   wrongStreak = 0;
   document.getElementById('gameOver').style.display = 'none';
-  document.getElementById('nameInput').value = '';
-  document.getElementById('submitMessage').textContent = '';
-  document.getElementById('playAgainButton').style.display = 'none';
   document.getElementById('scenario').style.display = 'block';
   document.getElementById('options').style.display = 'block';
+  document.getElementById('options').innerHTML = ''; // Clear options
   loadQuestion();
 }
 
-// Submit score
-async function submitScore() {
-      const name = document.getElementById('nameInput').value;
-      if (name.trim() === '') {
-          alert('Please enter your name.');
-          return;
-      }
-      const resultsData = { // Create an object with the event data
-          name: name,
-          points: points,
-      };
-      try {
-          const response = await fetch(pythonURI + "/api/labsim", { // Send a POST request
-              method: "POST", // Use POST method
-              headers: {
-                  "Content-Type": "application/json", // Set request headers
-              },
-              body: JSON.stringify(resultsData)
-          });
+// Initialize the game
+(async () => { 
+  await fetchUsername(); // Fetch the logged-in user's name at startup
+  await fetchPreviousAttempts(); // Fetch the user's previous attempts
+  fetchQuestions(); // Start by fetching questions
+})();
 
-          if (response.ok) {
-              alert(`Thank you, ${name}! Your score was submitted.`);
-              document.getElementById('playAgainButton').style.display = 'inline-block';
-          } else {
-              throw new Error('Network response failed');
-          }
-      } catch (error) { // Handle any errors during fetch
-          console.error("There was a problem with the fetch", error);
-      }
-}
-
-fetchQuestions(); // Start by fetching questions
-window.submitScore = submitScore;
 window.restartLab = restartLab;
-
 </script>
 
 </body>

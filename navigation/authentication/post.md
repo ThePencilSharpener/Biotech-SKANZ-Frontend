@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Add a Post
-permalink: /post
+title: Add Feedback Here!
+permalink: /feedback
 menu: nav/home.html
 search_exclude: true
 ---
@@ -45,7 +45,7 @@ search_exclude: true
     }
 </style>
 
-<div class="container">
+<div class="container" style="display:none;">
     <div class="form-container">
         <h2>Select Group and Channel</h2>
         <form id="selectionForm">
@@ -64,13 +64,13 @@ search_exclude: true
 
 <div class="container">
     <div class="form-container">
-        <h2>Add New Post</h2>
+        <h2>Provide Feedback Here!</h2>
         <form id="postForm">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required>
             <label for="comment">Comment:</label>
             <textarea id="comment" name="comment" required></textarea>
-            <button type="submit">Add Post</button>
+            <button type="submit">Add Feedback</button>
         </form>
     </div>
 </div>
@@ -210,18 +210,18 @@ search_exclude: true
             });
 
             if (!response.ok) {
-                throw new Error('Failed to add post: ' + response.statusText);
+                throw new Error('Failed to add: ' + response.statusText);
             }
 
             // Successful post
             const result = await response.json();
-            alert('Post added successfully!');
+            alert('Added successfully!');
             document.getElementById('postForm').reset();
             fetchData(channelId);
         } catch (error) {
             // Present alert on error from backend
-            console.error('Error adding post:', error);
-            alert('Error adding post: ' + error.message);
+            console.error('Error adding feedback:', error);
+            alert('Error adding feedback: ' + error.message);
         }
     });
 
@@ -240,7 +240,7 @@ search_exclude: true
                 body: JSON.stringify({ channel_id: channelId })
             });
             if (!response.ok) {
-                throw new Error('Failed to fetch posts: ' + response.statusText);
+                throw new Error('Failed to fetch feedback: ' + response.statusText);
             }
 
             // Parse the JSON data
@@ -250,7 +250,7 @@ search_exclude: true
             const postCount = postData.length || 0;
 
             // Update the HTML elements with the data
-            document.getElementById('count').innerHTML = `<h2>Count ${postCount}</h2>`;
+            document.getElementById('count').innerHTML = `<h2>Feedback Count: ${postCount} posts </h2>`;
 
             // Get the details div
             const detailsDiv = document.getElementById('details');
@@ -262,9 +262,8 @@ search_exclude: true
                 postElement.className = 'post-item';
                 postElement.innerHTML = `
                     <h3>${postItem.title}</h3>
-                    <p><strong>Channel:</strong> ${postItem.channel_name}</p>
-                    <p><strong>User:</strong> ${postItem.user_name}</p>
-                    <p>${postItem.comment}</p>
+                    <p><strong>User: </strong> ${postItem.user_name}</p>
+                    <p><strong>Feedback: </strong>${postItem.comment}</p>
                 `;
                 detailsDiv.appendChild(postElement);
             });
